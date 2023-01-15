@@ -1,3 +1,5 @@
+<script src="//kuma-stream.github.io/playerjs%20(7).js" type="text/javascript"></script>
+
 var player = new Playerjs({
     id: "1",
     file: "[360p]//kumaa.my.id/0:/Saikyou%20Onmyouji%20no%20Isekai%20Tenseiki/1/akuma_SOIT--01_360p.mp4,[480p]//kumaa.my.id/0:/Saikyou%20Onmyouji%20no%20Isekai%20Tenseiki/1/akuma_SOIT--01_480p.mp4,[720p]//kumaa.my.id/0:/Saikyou%20Onmyouji%20no%20Isekai%20Tenseiki/1/akuma_SOIT--01_720p.mp4"
