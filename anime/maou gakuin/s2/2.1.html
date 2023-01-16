@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+<video class='js-player' poster="thumbnail.jpg" controls playsinline>
+  <!-- Calidad -->
+  <source src="//kumaa.my.id/0:/Mau%20Gakuin/S2/2/akuma%20-%20MaouGknnFtkgshaSSnMnSTsStnGeK.S2.02.480p.mp4" size="480" type="video/mp4">
+  <source src="//kumaa.my.id/0:/Mau%20Gakuin/S2/2/akuma%20-%20MaouGknnFtkgshaSSnMnSTsStnGeK.S2.02.720p.mp4" size="720" type="video/mp4">
+  <source src="//kumaa.my.id/0:/Mau%20Gakuin/S2/2/akuma%20-%20MaouGknnFtkgshaSSnMnSTsStnGeK.S2.02.1080p.mp4" size="1080" type="video/mp4">
+</video>
+
+
+<script type="text/javascript">
+$('.w-dropdown').hover(function(evt)
+{
+evt.preventDefault();
+
+var openClass = 'w--open';
+var $view = $(this);
+if (evt.type == 'mouseenter')
+
+{ $view.find('.w-dropdown-toggle').addClass(openClass); $view.find('.w-dropdown-list').addClass(openClass); }
+else if (evt.type == 'mouseleave')
+
+{ $view.find('.w-dropdown-toggle').removeClass(openClass); $view.find('.w-dropdown-list').removeClass(openClass); }
+});
+</script><script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const player = Plyr.setup('.js-player');
+    });
+</script>
