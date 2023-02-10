@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="//cdn.kumaa.my.id/css/sty.css" rel="stylesheet">
+  </head>
+  <body>
+<div class="div-frame">
+  <div class="frame">
+    <iframe src="/anime/Sugar Apple Fairy Tale/6/1.html" allow="autoplay; encrypted-media" scrolling="no" frameborder="0" allowfullscreen id="iframe"></iframe>
+  </div>
+  <ul class="tab-server" id="serverid">
+    <li class="server">Pilih Server <ul class="sub-server">
+        <li class="btn active">
+          <a href="javascript:void" onclick="go('/anime/Sugar Apple Fairy Tale/6/1.html')">Akumadrive</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//www.fembed.com/v/yp42ddbe41k72m8n')">Fembed</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//sltube.org/e/WwyJnL9w0yyDMbPa')">Streamlare</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//streamsb.net/embed-zqiozvv4ypvq')">Streamsb</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//acefile.co/player/94808772')">Acefile 720p</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//mixdrop.co/e/dqp0ze7qtzplxq')">Mixdrop 720p</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//dood.yt/e/lvsa1irunwb7')">Dood</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//streamtape.to/e/MJkZXPLg89SmJ2R')">Streamtape</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//voe.sx/e/odqnvgq853pm')">Voe</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+  function go(loc) {
+    document.getElementById('iframe').src = loc;
+  };
+  var btnContainer = document.getElementById("serverid");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<script src="/a.js" type="text/javascript"></script>
+  </body>
+</html>
