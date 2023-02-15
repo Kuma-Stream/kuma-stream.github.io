@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="//cdn.kumaa.my.id/Js/playerjs.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+    <link href="//cdn.kumaa.my.id/css/sty.css" rel="stylesheet">
+  </head>
+  <body>
+<video class='js-player' poster="//img.akuma.my.id/0:/akuma/poster.webp" controls playsinline>
+  <!-- Calidad -->
+  <source src="//skuma.my.id/Anime/Winter%202023/Tensei%20Oujo%20to%20Tensai%20Reijou%20no%20Mahou%20Kakumei/4/Akuma-TTNKKM-04-480p.mp4" size="480" type="video/mp4">
+  <source src="//skuma.my.id/Anime/Winter%202023/Tensei%20Oujo%20to%20Tensai%20Reijou%20no%20Mahou%20Kakumei/4/Akuma-TTNKKM-04-720p.mp4" size="720" type="video/mp4">
+  <source src="//skuma.my.id/Anime/Winter%202023/Tensei%20Oujo%20to%20Tensai%20Reijou%20no%20Mahou%20Kakumei/4/Akuma-TTNKKM-04-1080p.mp4" size="1080" type="video/mp4">
+</video>
+
+
+<script type="text/javascript">
+$('.w-dropdown').hover(function(evt)
+{
+evt.preventDefault();
+
+var openClass = 'w--open';
+var $view = $(this);
+if (evt.type == 'mouseenter')
+
+{ $view.find('.w-dropdown-toggle').addClass(openClass); $view.find('.w-dropdown-list').addClass(openClass); }
+else if (evt.type == 'mouseleave')
+
+{ $view.find('.w-dropdown-toggle').removeClass(openClass); $view.find('.w-dropdown-list').removeClass(openClass); }
+});
+</script><script src="https://cdn.plyr.io/3.7.3/plyr.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const player = Plyr.setup('.js-player');
+    });
+</script>
+  </body>
+</html>
