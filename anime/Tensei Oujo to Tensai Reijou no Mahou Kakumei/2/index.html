@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="//cdn.kumaa.my.id/css/sty.css" rel="stylesheet">
+  </head>
+  <body>
+<div class="div-frame">
+  <div class="frame">
+    <iframe src="/anime/Tensei Oujo to Tensai Reijou no Mahou Kakumei/2/1.html" allow="autoplay; encrypted-media" scrolling="no" frameborder="0" allowfullscreen id="iframe"></iframe>
+  </div>
+  <ul class="tab-server" id="serverid">
+    <li class="server">Pilih Server <ul class="sub-server">
+        <li class="btn active">
+          <a href="javascript:void" onclick="go('/anime/Tensei Oujo to Tensai Reijou no Mahou Kakumei/2/1.html')">Akumadrive</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//acefile.co/player/95206746')">Acefile</a>
+        </li>
+        <li class="btn">
+          <a href="javascript:void" onclick="go('//streamsb.net/embed-7mtts3m2h5aj')">Streamsb</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//hlsplayer.top/embed2/?id=1VEb9LewaoxVlAvLC2xCS0ryU5weeLpor&host=gdrive')">Drive Ads</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+  function go(loc) {
+    document.getElementById('iframe').src = loc;
+  };
+  var btnContainer = document.getElementById("serverid");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<script src="/a.js" type="text/javascript"></script>
+  </body>
+</html>
