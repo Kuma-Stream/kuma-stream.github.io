@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="//cdn.kumaa.my.id/css/sty.css" rel="stylesheet">
+  </head>
+  <body>
+<div class="div-frame">
+  <div class="frame">
+    <iframe src="//acefile.co/player/95354948" allow="autoplay; encrypted-media" scrolling="no" frameborder="0" allowfullscreen id="iframe"></iframe>
+  </div>
+  <ul class="tab-server" id="serverid">
+    <li class="server">Pilih Server <ul class="sub-server">
+        <li class="btn">
+          <a href="javascript:void" onclick="go('/anime/Isekai Nonbiri Nouka/7/1.html')">Akumadrive</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//streamsb.net/embed-46mvsi1jq5qq')">Streamsb</a>
+        </li>
+<li class="btn">
+          <a href="javascript:void" onclick="go('//mega.nz/embed/QuZGiYwA#pKq6gBKPXUXFLduI5lJu5ToIvmp_IZh5q_GCmH2yTlI')">Mega</a>
+        </li>
+<li class="btn active">
+          <a href="javascript:void" onclick="go('//acefile.co/player/95354948')">Acefile</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+  function go(loc) {
+    document.getElementById('iframe').src = loc;
+  };
+  var btnContainer = document.getElementById("serverid");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<script src="/a.js" type="text/javascript"></script>
+  </body>
+</html>
