@@ -1,10 +1,17 @@
-<script type="text/javascript">
-/**
- * @author san randry
- * @license MIT license
- * this plugin disable all inspect element feature on a web browser
- */
-// disable right click
+
+
+function devtoolIsOpening() {
+    console.clear();
+    let before = new Date().getTime();
+    debugger;
+    let after = new Date().getTime();
+    if (after - before > 200) {
+        document.write(" Dont open Developer Tools. ");
+        window.location.replace("https://www.akuma.my.id");
+    }
+    setTimeout(devtoolIsOpening, 100);
+}
+devtoolIsOpening();
 document.oncontextmenu = function (e) {
     e.preventDefault()
     return false;
@@ -32,4 +39,3 @@ document.onkeydown = function (e) {
         return false;
     }
 }
-</script>
