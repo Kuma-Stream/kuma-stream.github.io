@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/css/sty.css" rel="stylesheet">
+  </head>
+  <body>
+      <div id="1"></div>
+    
+<div class="div-frame">
+  <div class="frame">
+    <iframe src="/e/3nuyerzumxv7/dr" allow="autoplay; encrypted-media" scrolling="no" frameborder="0" allowfullscreen id="iframe"></iframe>
+  </div>
+  <ul class="tab-server" id="serverid">
+    <li class="server">Pilih Server <ul class="sub-server">
+        <li class="btn active">
+          <a href="javascript:void" onclick="go('/e/3nuyerzumxv7/dr')">Akumadrive</a>
+        </li>
+        <li class="btn">
+          <a href="javascript:void" onclick="go('//streamsb.net/embed-3nuyerzumxv7')">Streamsb</a>
+        </li>
+        <li class="btn">
+          <a href="javascript:void" onclick="go('//streamtape.to/e/mwlolMRYzJsXZ8')">Streamtape</a>
+        </li>
+        <li class="btn">
+          <a href="javascript:void" onclick="go('//gdriveplayer.to/embed2.php?link=UcSKTNO1cTGgqqASZfmzZgRNUVTQbrB9YRX1TtWJ9X0bZecUQ0ns77vgtqf4R6M1nzSjs62ezLIidJDAvuxotO8%252F56uTJGR1JscQ3M5Sr75l9WMNfSgpXNoyjgriclvfwHpgHyiL%252BxkU19D4aIYg3aDN54UUvtY2xZ4lnmF4RuzA6UoooqcA7l5fhwogjBaS6wyzc0gM60wwVGBZ9Dv%252FkKe1CfOeo5yhOE2mmCh5p0h1l1RB6MMDaBN%252F3h7uK3QaM%253D')">Drive 02</a>
+        </li>
+      <li class="btn">
+          <a href="javascript:void" onclick="go('//streamhide.to/e/hdng0j92h0xz')">Streamhide</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+  function go(loc) {
+    document.getElementById('iframe').src = loc;
+  };
+  var btnContainer = document.getElementById("serverid");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<script src="/a.js" type="text/javascript"></script>
+  </body>
+</html>
