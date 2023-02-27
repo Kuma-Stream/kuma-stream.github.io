@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/css/sty.css" rel="stylesheet">
+  </head>
+  <body>
+      <div id="1"></div>
+    
+<div class="div-frame">
+  <div class="frame">
+    <iframe src="/e/z5y9nbcbe42x/dr" allow="autoplay; encrypted-media" scrolling="no" frameborder="0" allowfullscreen id="iframe"></iframe>
+  </div>
+  <ul class="tab-server" id="serverid">
+    <li class="server">Pilih Server <ul class="sub-server">
+        <li class="btn active">
+          <a href="javascript:void" onclick="go('/e/z5y9nbcbe42x/dr')">Akumadrive</a>
+        </li>
+        <li class="btn">
+          <a href="javascript:void" onclick="go('//www.fembed.com/v/8mjl-pi8e4544gll')">Fembed</a>
+        </li>
+        <li class="btn">
+          <a href="javascript:void" onclick="go('//gdriveplayer.to/embed2.php?link=t0PEKfOrxJrydbfDpaqnVwNVwiE7lbyZwSkJ3jEsrcitGq0L0vSc8g1lOx%252Fu4cwTKqHP2ZvrJm7123%252BA3bPv7uvkY4ke5I%252Fyp%252Bx3zU7lV2tcdJqxeB8eJfzM1EyuW4I0PQcP1T8V8wsDsNXS88lwRHxaqqkOvLfqLH8%252FIOxZ9saQ2852Qsh%252FRLapCBsGUUFCJo2bgbXh9CErhvXFep3rfzkkx2H%252BvJwbSed28pAd4wwqFHJPpro7feCZ06xA5erdY%253D')">Drive 02</a>
+        </li>
+      <li class="btn">
+          <a href="javascript:void" onclick="go('//streamhide.to/e/z5y9nbcbe42x')">Streamhide</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+  function go(loc) {
+    document.getElementById('iframe').src = loc;
+  };
+  var btnContainer = document.getElementById("serverid");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<script src="/a.js" type="text/javascript"></script>
+  </body>
+</html>
