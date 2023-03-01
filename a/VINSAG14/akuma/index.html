@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="/src/css/plyio.css" />
+    <link href="/src/css/sty.css" rel="stylesheet">
+  </head>
+  <body>
+    <video class='js-player' poster="/src/poster.webp" controls playsinline>
+  <source src="https://wht.nuplink.net/pool/pub/ec/96/5c/2b4befe3bf42c10584ef03589eec965c/94566292?token=2b5094fc468ad826b1e2c571b4038a5e&ts=1677688800" size="480" type="video/mp4">
+  <source src="https://wht.nuplink.net/pool/pub/41/83/c0/397b4c612ee6d4af6feb679c014183c0/141036794?token=064b482222810669d695a4def53b8fb9&ts=1677688779" size="720" type="video/mp4">
+  <source src="https://wht.nuplink.net/pool/pub/e6/05/df/d3fc1af2a1459dcf938afdf5a9e605df/300769058?token=adb286497d63182bd727df110e05418d&ts=1677688692" size="1080" type="video/mp4">
+</video>
+
+
+<script type="text/javascript">
+$('.w-dropdown').hover(function(evt)
+{
+evt.preventDefault();
+
+var openClass = 'w--open';
+var $view = $(this);
+if (evt.type == 'mouseenter')
+
+{ $view.find('.w-dropdown-toggle').addClass(openClass); $view.find('.w-dropdown-list').addClass(openClass); }
+else if (evt.type == 'mouseleave')
+
+{ $view.find('.w-dropdown-toggle').removeClass(openClass); $view.find('.w-dropdown-list').removeClass(openClass); }
+});
+    </script>
+<script src="/src/js/plyio.js" type="text/javascript"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const player = Plyr.setup('.js-player');
+    });
+</script>
+  </body>
+</html>
