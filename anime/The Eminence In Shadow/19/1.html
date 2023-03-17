@@ -3,17 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="//cdn.kumaa.my.id/Js/playerjs.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
-    <link href="//cdn.kumaa.my.id/css/sty.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/src/css/plyio.css" />
+    <link href="/src/css/sty.css" rel="stylesheet">
   </head>
   <body>
-    <div id="player"></div>
-    <script>
-      var player = new Playerjs({
-        id: "player",
-        file: "[360p]//skuma.my.id/Anime/Fall%202022/The%20Eminence%20In%20Shadow/19/Akuma-SDWGDN-19-360p.mp4,[480p]//skuma.my.id/Anime/Fall%202022/The%20Eminence%20In%20Shadow/19/Akuma-SDWGDN-19-480p.mp4,[720p]//skuma.my.id/Anime/Fall%202022/The%20Eminence%20In%20Shadow/19/Akuma-SDWGDN-19-720p.mp4"
-      })
+    <video class='js-player' poster="/src/poster.webp" controls playsinline>
+  <source src="https://a-delivery29.mxdcontent.net/d/7rld0oxob6nrjq/qs4cm4ccyfzckw3wwsq8?ab=0&amp;r=https%3A%2F%2Fmixdrop.co%2Ff%2F7rld0oxob6nrjq" size="720" type="video/mp4">
+</video>
+
+
+<script type="text/javascript">
+$('.w-dropdown').hover(function(evt)
+{
+evt.preventDefault();
+
+var openClass = 'w--open';
+var $view = $(this);
+if (evt.type == 'mouseenter')
+
+{ $view.find('.w-dropdown-toggle').addClass(openClass); $view.find('.w-dropdown-list').addClass(openClass); }
+else if (evt.type == 'mouseleave')
+
+{ $view.find('.w-dropdown-toggle').removeClass(openClass); $view.find('.w-dropdown-list').removeClass(openClass); }
+});
     </script>
+<script src="/src/js/plyio.js" type="text/javascript"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const player = Plyr.setup('.js-player');
+    });
+</script>
   </body>
 </html>
