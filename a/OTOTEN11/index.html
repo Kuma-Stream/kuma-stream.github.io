@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/css/sty.css" rel="stylesheet">
+  </head>
+  <body>
+<div class="div-frame">
+  <div class="frame">
+    <iframe src="/a/OTOTEN11/akuma" allow="autoplay; encrypted-media" scrolling="no" frameborder="0" allowfullscreen id="iframe"></iframe>
+  </div>
+  <ul class="tab-server" id="serverid">
+    <li class="server">Pilih Server <ul class="sub-server">
+		<li class="btn active">
+          <a href="javascript:void" onclick="go('/a/OTOTEN11/akuma')">Akumadrive</a>
+        </li>
+        <li class="btn">
+		<a href="javascript:void" onclick="go('https://streamsb.net/embed-k6yj5tabkczd?poster=https://kuma-stream.github.io/src/poster.png')">Streamsb</a>
+        </li>
+        <li class="btn">
+          <a href="javascript:void" onclick="go('https://www.blogger.com/video.g?token=AD6v5dwqH2c_jKoojh8oalb_1IJJ6y_3dOF9tsN7fUw-8sBBh6YCno_mCZnVrMeJ_evV1Zll9PtQ1oXr_P9qF2INeHN8TSy_ZglouRwsNVBZ0okHCnZ-Q93_N8g3hgvxPjY36-QCBvY')">Google V2</a>
+        </li>
+        <li class="btn">
+          <a href="javascript:void" onclick="go('//gdriveplayer.to/embed2.php?link=sJf5B7h8qvB8CkLwOBzCHQYDnUtZ8z05SeDIKPF6t7qTAl%252FazjRr6h9dMCrzWv5C1WcVAoUKT2HaTN1Wi7lUv9GzR3%252F%252BHXYXDzc6PquwmJQmbsQi7N7ylUqOF9IGsQxJrIT%252FSVxr6B%252FttXRe8oeKDf%252FBfsU3xGeM0rJHdcAFiG6BRGsnvo85Oy39vrSXDJMowbuKqspsKzBz1OWSEnD0fZI6yv63itlMvQucpLZRrDMA%253D%253D')">Google V3</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+  function go(loc) {
+    document.getElementById('iframe').src = loc;
+  };
+  var btnContainer = document.getElementById("serverid");
+  var btns = btnContainer.getElementsByClassName("btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+</script>
+<script src="/a.js" type="text/javascript"></script>
+  </body>
+</html>
