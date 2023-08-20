@@ -1,78 +1,164 @@
 
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <title>Play Video via Links - Hash Hackers</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" href="https://akuma.my.id/favicon.png">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4/dist/materia/bootstrap.min.css">
-      <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js" integrity="sha256-8L3yX9qPmvWSDIIHB3WGTH4RZusxVA0DDmuAo4LjnOE=" crossorigin="anonymous"></script>
-      <style>
-         .loading {position: fixed;z-index: 999;height: 2em;width: 2em;overflow: show;margin: auto;top: 0;left: 0;bottom: 0;right: 0;}.loading:before {content: '';display: block;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0, .8));background: -webkit-radial-gradient(rgba(20, 20, 20,.8), rgba(0, 0, 0,.8));}.loading:not(:required) {font: 0/0 a;color: transparent;text-shadow: none;background-color: transparent;border: 0;}.loading:not(:required):after {content: '';display: block;font-size: 10px;width: 1em;height: 1em;margin-top: -0.5em;-webkit-animation: spinner 150ms infinite linear;-moz-animation: spinner 150ms infinite linear;-ms-animation: spinner 150ms infinite linear;-o-animation: spinner 150ms infinite linear;animation: spinner 150ms infinite linear;border-radius: 0.5em;-webkit-box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;box-shadow: rgba(255,255,255, 0.75) 1.5em 0 0 0, rgba(255,255,255, 0.75) 1.1em 1.1em 0 0, rgba(255,255,255, 0.75) 0 1.5em 0 0, rgba(255,255,255, 0.75) -1.1em 1.1em 0 0, rgba(255,255,255, 0.75) -1.5em 0 0 0, rgba(255,255,255, 0.75) -1.1em -1.1em 0 0, rgba(255,255,255, 0.75) 0 -1.5em 0 0, rgba(255,255,255, 0.75) 1.1em -1.1em 0 0;}@-webkit-keyframes spinner {0% {-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);}100% {-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg);-o-transform: rotate(360deg);transform: rotate(360deg);}}@-moz-keyframes spinner {0% {-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);}100% {-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg);-o-transform: rotate(360deg);transform: rotate(360deg);}}@-o-keyframes spinner {0% {-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);}100% {-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg);-o-transform: rotate(360deg);transform: rotate(360deg);}}@keyframes spinner {0% {-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);-o-transform: rotate(0deg);transform: rotate(0deg);}100% {-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg);-o-transform: rotate(360deg);transform: rotate(360deg);}}.footer {left: 0;bottom: 0;width: 100%;color: white;text-align: center;z-index: 1030;}html {position: relative;min-height: 100%;}.disabled-class {display: none;}body {margin-bottom: 90px;}.footer {position: absolute;bottom: 0;width: 100%;height: 100px;line-height: 30px;background-color: #222222;}.footer > .container {padding: 15px 0;}#account_list table td:first-child {cursor: pointer;}.account_row.loading .close, .account_row:not(.loading) .spinner-border {display: none;}pre{color:unset;}
-      </style>
-      <link rel="stylesheet" href="/src/css/plyio.css" />
-      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-   </head>
-   <body>
-      <div class="loading" id="spinner">Loading&#8230;</div>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
-         <a class="navbar-brand" href="/"><img border="0" alt="PANIMEID" src="/src/player.png" width="150px"></a>
-         <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-               <li class="nav-item active">
-                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="https://telegram.dog/panimeid" target="_blank">Telegram</a>
-               </li>
-            </ul>
-         </div>
-      </nav>
-      <div class="container">
-      <div class="row">
-      <div class="col">
-      <div class="card my-4">
-         <div class="card-body">
-            <center>
-               <h4>Play Videos via Links</h4>
-               <p class="mt-3">Play Videos Directly from Browser</p>
-               <p class="col-12 col-md-12" id="videoplayer"></p>
-               <div class="form-group align-items-center">
-                  <div class="row justify-content-center file">
-                     <div class="col-12 col-md-8"> <input id="videourl" type="text" class="form-control" placeholder="Video Link" value="" required></div>
-                     <div class="col-12 col-md-8"> <button id="playvideo" style="margin-top: 5px;" class="btn btn-primary btn-block">Play</button></div>
-                     <div class="col-12 col-md-8" id="dlgate" style="display:none;"> <button id="download" style="margin-top: 5px;" class="btn btn-danger btn-block">Download</button></div>
-                  </div>
-            </center>
-            </div>
-         </div>
-      </div>
-      <footer class="footer">
-         <div class="container">
-            <div class="text-muted">Made with ❤️ by <b><a href="https://telegram.dog/panimeid">PANIMEID</a></b></div>
-            <div class="text-muted">Version: <b>1.0</b> | <a href="https://telegram.dog/panimeid">Telegram</a></div>
-         </div>
-      </footer>
-      <script src="/src/js/plyio.js"></script>
-      <script src="https://cdn.zindex.eu.org/publiclinks/video.min.js?v=1.3"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" type="d6385f183e1df5ee21eb696f-text/javascript"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous" type="d6385f183e1df5ee21eb696f-text/javascript"></script>
-         <script>
+  <head>
+    <title>Streaming Video - Panimeid</title>
 
-    const player = new Plyr('#player', {
-        captions: { active: true, language: 'id', update: true },
-        controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'rewind', 'fast-forward', 'settings', 'fullscreen']
-    });
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    player.on('enterfullscreen', event => {
-        screen.orientation.lock('landscape');
-    });
+    <link rel="icon" type="image/jpg" sizes="32x32" href="https://akuma.my.id/favicon.ico">
+    <link rel="icon" type="image/jpg" sizes="16x16" href="https://akuma.my.id/favicon.ico">
 
-    player.on('exitfullscreen', event => {
-        screen.orientation.lock('portrait');
-    });
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-  </script>
-   </body>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+      }
+
+      #stream-media {
+        height: 100%;
+        width: 100%;
+      }
+
+      #error-message {
+        color: red;
+        font-size: 24px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .plyr__video-wrapper .plyr-download-button{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 30px;
+        height: 30px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        z-index: 10;
+      }
+
+      .plyr__volume {
+        max-width: initial;
+        min-width: initial;
+        width: auto;
+        position: relative;
+      }
+
+
+      .plyr__video-wrapper .plyr-share-button{
+        position: absolute;
+        top: 50px;
+        left: 10px;
+        width: 30px;
+        height: 30px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        z-index: 10;
+      }
+
+      .plyr__video-wrapper .plyr-download-button:hover,
+      .plyr__video-wrapper .plyr-share-button:hover{
+        background-color: rgba(255, 255, 255, 0.7);
+        color: black;
+      }
+
+      .plyr__video-wrapper .plyr-download-button:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f019";
+        font-weight: bold;
+      }
+
+      .plyr__video-wrapper .plyr-share-button:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f064";
+        font-weight: bold;
+      }
+
+      .plyr, .plyr__video-wrapper, .plyr__video-embed iframe {
+        height: 100%;
+      }
+
+    </style>
+  </head>
+  
+  <body>
+    <video id="stream-media" controls preload="auto" data-poster="/src/poster.jpg">
+      <source src="" type="">
+      <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video
+      </p>
+    </video>
+    
+    <div id="error-message"></div>
+
+    <script>
+      var player = new Plyr('#stream-media', {
+          controls:['play-large', 'rewind', 'play', 'fast-forward', 'progress', 'current-time', 'mute', 'settings', 'pip', 'fullscreen'],
+          settings:['speed','loop'],
+          speed:{selected:1,options:[0.25,0.5,0.75,1,1.25,1.5,1.75,2]},
+          seek: 10,
+          keyboard: { focused: true, global: true },
+      });
+      
+      var urlParams = new URLSearchParams(window.location.search);
+      
+      var mediaLink = urlParams.get('media') || urlParams.get('m') || urlParams.get('video');
+      var title = urlParams.get('title') || urlParams.get('t');
+      
+      if (title) {
+          document.title = `@ongoingpmid | ${title}`;
+      }
+
+      if (mediaLink) {
+          document.querySelector('#stream-media source').setAttribute('src', mediaLink);
+          player.restart();
+
+          var downloadButton = document.createElement('div');
+          downloadButton.className = 'plyr-download-button';
+          
+          downloadButton.onclick = function() {
+            event.stopPropagation();
+            var link = document.createElement('a');
+            link.href = mediaLink;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          };
+          
+          player.elements.container.querySelector('.plyr__video-wrapper').appendChild(downloadButton);
+
+          var shareButton = document.createElement('div');
+          shareButton.className = 'plyr-share-button';
+
+          shareButton.onclick = function() {
+            event.stopPropagation();
+            if (navigator.share) {
+              navigator.share({
+                title: "Play",
+                url: window.location.href
+              });
+            }
+          };
+          
+          player.elements.container.querySelector('.plyr__video-wrapper').appendChild(shareButton);
+          
+      } else {
+          document.getElementById('error-message').textContent = 'Error: Media URL not provided';
+      }
+    </script>
+    
+  </body>
 </html>
